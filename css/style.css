@@ -162,8 +162,13 @@ body {
 /* עיצוב תמונת פרופיל */
 .profile-image {
   width: 150px;                  /* רוחב תמונה */
+  height: 150px;                 /* גובה תמונה - חיוני לobject-fit */
   border-radius: 50%;            /* תמונה עגולה */
   animation: bounce 1s infinite alternate; /* אנימציה קופצת */
+  display: block;                /* הופך את התמונה לבלוק */
+  margin: 0 auto;                /* מרכז את התמונה אופקית */
+  object-fit: cover;             /* מכסה את כל העיגול */
+  object-position: center;       /* מרכז את התמונה בתוך העיגול */
 }
 
 /* הגדרת אנימציה קופצת */
