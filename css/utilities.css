@@ -1,0 +1,191 @@
+/* Utility CSS file - contains reusable styling */
+
+/* Main container - limits width and centers content */
+.container {
+  max-width: var(--width-medium);  /* Max width */
+  margin: 0 auto;                  /* Horizontal centering */
+  padding: 1rem 2rem;              /* Internal spacing */
+}
+
+
+/* Button styling */
+.btn {
+  display: inline-block;            /* Inline display */
+  padding: 0.75rem 1.9rem;         /* Internal spacing */
+  border-radius: 30px;              /* Rounded corners */
+  text-transform: uppercase;        /* Uppercase letters */
+  font-size: 0.82rem;              /* Font size */
+  font-weight: bold;                /* Bold text */
+  transition: 0.3s;                 /* Animation */
+}
+
+/* Primary button - blue */
+.btn-primary {
+  background: #3b82f6;              /* Blue background */
+  color: #ffffff;                   /* White text */
+}
+
+/* Secondary button - blue */
+.btn-secondary {
+  margin: 5px 0;                    /* External spacing */
+  background-color: #3b82f6;        /* Blue background */
+  color: #ffffff;                   /* White text */
+}
+
+/* Hover effect for primary button */
+.btn-primary:hover {
+  background: #2563eb;               /* Darker blue color */
+}
+
+/* Hover effect for secondary button */
+.btn-secondary:hover {
+  background: #2563eb;               /* Darker blue color */
+}
+
+/* כפתור החלפת מצב כהה/בהיר */
+#switch {
+  display: none;                    /* מוסתר - רק הפונקציונליות */
+}
+
+/* מיכל אייקונים של שמש וירח */
+.toggle-icons {
+  display: flex;                    /* סידור אופקי */
+  justify-content: space-between;   /* פיזור */
+  align-items: center;              /* יישור אנכי */
+  cursor: pointer;                  /* סמן יד */
+}
+
+/* עיצוב אייקונים */
+.toggle-icons > img {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* אנימציה חלקה */
+  width: 30px;                      /* רוחב אייקון */
+}
+
+/* אייקון ירח - סיבוב התחלתי */
+.moon {
+  transform: rotate(10deg);         /* סיבוב קל */
+}
+
+/* סיבוב ירח כשהמצב כהה פעיל */
+#switch:checked + .toggle-icons .moon {
+  transform: rotate(250deg);        /* סיבוב מלא */
+}
+
+/* סיבוב שמש כשהמצב כהה פעיל */
+#switch:checked + .toggle-icons .sun {
+  transform: rotate(100deg);        /* סיבוב */
+}
+
+/* מיכל הכותרת הראשית */
+.header-container {
+  display: flex;                    /* סידור גמיש */
+  flex-direction: column;           /* סידור אנכי */
+  align-items: center;              /* יישור למרכז */
+  justify-content: center;          /* יישור אנכי למרכז */
+  margin-top: 8rem;                /* רווח מעל */
+  padding: 1rem;                   /* רווחים פנימיים */
+}
+
+/* רווח בין אלמנטים בכותרת */
+.header-container > div {
+  margin-top: 1rem;
+}
+
+/* עיצוב טקסט תוכן */
+.content-text {
+  text-align: center;               /* יישור למרכז */
+  margin: 1.5rem 0;                /* רווחים חיצוניים */
+}
+
+/* עיצוב כותרות תוכן */
+.content-text h2 {
+  font-size: 2.2rem;               /* גודל פונט בינוני */
+  line-height: 1.2;                /* רווח בין שורות */
+  transition: 0.2s ease-in-out;    /* אנימציה */
+}
+
+/* עיצוב פסקות תוכן */
+.content-text p {
+  padding: 0.5rem;                 /* רווחים פנימיים */
+  margin: 0 auto;                  /* מרכוז */
+  max-width: 700px;                /* רוחב מקסימלי */
+}
+
+/* עיצוב כרטיסי פרויקטים */
+.card {
+  padding: 1rem;                   /* רווחים פנימיים */
+  background: var(--card-background); /* רקע כרטיס */
+  color: #ffffff;                   /* טקסט לבן */
+  border-radius: 5px;               /* פינות מעוגלות */
+  transition: 0.4s ease-in-out;    /* אנימציה */
+  cursor: pointer;                  /* סמן יד */
+}
+
+/* עיצוב קישורים בכרטיסים */
+.card a {
+  color: #ffffff;                   /* צבע לבן */
+  transition: 0.25s ease-in-out;   /* אנימציה */
+  font-size: 1.1rem;               /* גודל פונט */
+  margin-right: 0.3rem;            /* רווח מימין */
+}
+
+/* אפקט hover לקישורים */
+.card a:hover {
+  color: var(--primary-color);      /* צבע צהוב */
+}
+
+/* אפקט hover לכרטיסים */
+.card:hover {
+  box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8); /* צל פנימי */
+}
+
+/* הצגת מידע פרויקט ב-hover */
+.card:hover .project-info {
+  opacity: 1;                       /* הצגה מלאה */
+}
+
+/* תמונות רקע לכרטיסי פרויקטים */
+
+/* פרויקט 1 */
+.card:nth-child(1) {
+  background: url(../assets/project/project-one.png) center center/cover; /* תמונת רקע */
+}
+
+/* פרויקט 2 */
+.card:nth-child(2) {
+  background: url(../assets/project/project-two.png) center center/cover;
+}
+
+/* פרויקט 3 */
+.card:nth-child(3) {
+  background: url(../assets/project/project-three.png) center center/cover;
+}
+
+/* פרויקט 4 */
+.card:nth-child(4) {
+  background: url(../assets/project/project-four.png) center center/cover;
+}
+
+/* פרויקט 5 */
+.card:nth-child(5) {
+  background: url(../assets/project/project-five.png) center center/cover;
+}
+
+/* פרויקט 6 */
+.card:nth-child(6) {
+  background: url(../assets/project/project-six.png) center center/cover;
+}
+
+/* עיצוב רספונסיבי - מובייל */
+@media (max-width: 768px) {
+  /* התאמת כותרת למובייל */
+  .header-container {
+    margin-top: 7rem;              /* רווח קטן יותר */
+    text-align: center;
+  }
+
+  /* הקטנת כותרות במובייל */
+  .content-text h2 {
+    font-size: 2.5rem;             /* גודל פונט קטן יותר */
+  }
+} 
