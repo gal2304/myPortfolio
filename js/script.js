@@ -28,31 +28,19 @@ const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
 );
 
-/* function to switch the theme */
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");   
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");  
-  }
-}
-
-/* add a listener to the theme switch button */
-toggleSwitch.addEventListener("change", switchTheme, false);
-
-/* save the theme preference for returning visitors */
-
 /* improved function to switch the theme with saving */
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
     localStorage.setItem("theme", "dark");   
+  } else {
     document.documentElement.setAttribute("data-theme", "light");
     localStorage.setItem("theme", "light");  
   }
 }
 
-
+/* add a listener to the theme switch button */
+toggleSwitch.addEventListener("change", switchTheme, false);
 
 /* check if there is a saved theme */
 const currentTheme = localStorage.getItem("theme")
@@ -62,7 +50,6 @@ const currentTheme = localStorage.getItem("theme")
 /* apply the saved theme */
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
-
   
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
@@ -70,7 +57,6 @@ if (currentTheme) {
 }
 
 /* add the current year to the footer */
-/* select the date element */
 let myDate = document.querySelector("#datee");
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes; 

@@ -267,7 +267,7 @@ body {
   height: 18px;
   transition: filter 0.3s;
   filter: brightness(0) invert(0); 
-
+}
 
 [data-theme="dark"] .contact-details .contact-item:last-child img {
   filter: brightness(0) invert(1);
