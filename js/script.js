@@ -88,5 +88,40 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 150);
       });
     });
+    
+    // הוספתי קוד לטיפול בלחיצות על אותיות מונפשות במובייל
+    const animatedTextSpans = document.querySelectorAll('.animated-text span');
+    
+    animatedTextSpans.forEach(span => {
+      // הוספתי טיפול בלחיצה על האותיות
+      span.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        this.style.color = '#3b82f6';
+        this.style.transform = 'scale(1.1)';
+        this.style.transition = 'all 0.15s ease';
+      });
+      
+      span.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        setTimeout(() => {
+          this.style.color = '';
+          this.style.transform = '';
+          this.style.transition = '';
+        }, 150);
+      });
+      
+      // הוספתי גם טיפול בלחיצה רגילה למקרה של מכשירים אחרים
+      span.addEventListener('click', function(e) {
+        this.style.color = '#3b82f6';
+        this.style.transform = 'scale(1.1)';
+        this.style.transition = 'all 0.15s ease';
+        
+        setTimeout(() => {
+          this.style.color = '';
+          this.style.transform = '';
+          this.style.transition = '';
+        }, 150);
+      });
+    });
   }
 }); 
