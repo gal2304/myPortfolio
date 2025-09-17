@@ -60,3 +60,33 @@ if (currentTheme) {
 let myDate = document.querySelector("#datee");
 const yes = new Date().getFullYear();
 myDate.innerHTML = yes; 
+
+// הוספתי קוד לטיפול בלחיצות על פרויקטים במובייל
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.innerWidth <= 768) {
+    const projectCards = document.querySelectorAll('.project .card');
+    
+    projectCards.forEach(card => {
+      // הוספתי טיפול בלחיצה
+      card.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        this.classList.add('touched');
+      });
+      
+      card.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        setTimeout(() => {
+          this.classList.remove('touched');
+        }, 150);
+      });
+      
+      // הוספתי גם טיפול בלחיצה רגילה למקרה של מכשירים אחרים
+      card.addEventListener('click', function(e) {
+        this.classList.add('touched');
+        setTimeout(() => {
+          this.classList.remove('touched');
+        }, 150);
+      });
+    });
+  }
+}); 

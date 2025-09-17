@@ -858,13 +858,17 @@ body {
   .project .card {
     cursor: pointer !important;
     position: relative !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1) !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
   }
   
-  .project .card:hover,
-  .project .card:active,
-  .project .card:focus {
+  /* הסרתי את hover ו-active כי הם לא עובדים באייפון */
+  .project .card.touched {
     transform: scale(1.02) !important;
     transition: all 0.3s ease !important;
+    background-color: rgba(0, 0, 0, 0.1) !important;
   }
   
   /* וידוא שהאזור הקליקבילי הוא כל הריבוע */
@@ -874,10 +878,5 @@ body {
   
   .project .card {
     pointer-events: auto !important;
-  }
-  
-  /* הוספתי אפקט לחיצה לכל הריבוע */
-  .project .card:active {
-    background-color: rgba(0, 0, 0, 0.1) !important;
   }
 }
