@@ -802,7 +802,7 @@ body {
 
 /* Resume button styling for desktop only */
 @media (min-width: 769px) {
-  .nav-link[href="#resume"] {
+  .nav-link[href*="docs.google.com"] {
     background: linear-gradient(135deg, #3C64DC 0%, #5078F0 100%);
     color: white !important;
     padding: 12px 24px;
@@ -816,7 +816,7 @@ body {
     position: relative;
   }
 
-  .nav-link[href="#resume"]:hover {
+  .nav-link[href*="docs.google.com"]:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(60, 100, 220, 0.4);
     background: linear-gradient(135deg, #4A74E4 0%, #5E88F8 100%);
@@ -824,15 +824,72 @@ body {
     border-bottom: none !important;
   }
 
-  .nav-link[href="#resume"]:active {
+  .nav-link[href*="docs.google.com"]:active {
     transform: translateY(0);
     box-shadow: 0 2px 10px rgba(60, 100, 220, 0.3);
     color: white !important;
   }
 
   /* Remove any pseudo-elements that might create underlines */
-  .nav-link[href="#resume"]::after,
-  .nav-link[href="#resume"]::before {
+  .nav-link[href*="docs.google.com"]::after,
+  .nav-link[href*="docs.google.com"]::before {
+    display: none !important;
+  }
+}
+
+/* Mobile-specific fix for animated text */
+@media (max-width: 768px) {
+  .animated-text {
+    font-size: 0.75em !important;
+    line-height: 1.5 !important;
+    white-space: normal !important;
+    word-break: keep-all !important;
+    hyphens: none !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+  }
+  
+  /* Force each span to not break */
+  .animated-text span {
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+}
+
+/* Resume button styling for mobile - return to normal */
+@media (max-width: 768px) {
+  .nav-link[href*="docs.google.com"] {
+    background: none !important;
+    color: #ffffff !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+    text-transform: uppercase !important;
+    transition: color 0.15s ease !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+    position: relative !important;
+  }
+
+  .nav-link[href*="docs.google.com"]:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+    color: #3b82f6 !important;
+    border-bottom: none !important;
+  }
+
+  .nav-link[href*="docs.google.com"]:active {
+    transform: none !important;
+    box-shadow: none !important;
+    color: #3b82f6 !important;
+  }
+
+  /* Remove any pseudo-elements that might create underlines */
+  .nav-link[href*="docs.google.com"]::after,
+  .nav-link[href*="docs.google.com"]::before {
     display: none !important;
   }
 }
