@@ -783,24 +783,18 @@ body {
     font-size: 1em !important;
     line-height: 1.5 !important;
     white-space: normal !important;
-    word-break: keep-all !important;
+    word-break: normal !important; /* שיניתי מ-keep-all ל-normal */
     hyphens: none !important;
     text-align: center !important;
-    max-width: 100% !important;
+    max-width: none !important; /* שיניתי מ-100% ל-none */
     overflow-wrap: break-word !important;
+    overflow: visible !important;
   }
   
   .animated-text span {
-    white-space: nowrap !important;
+    white-space: normal !important; /* שיניתי מ-nowrap ל-normal */
     display: inline-block !important;
-    /* הוספתי תמיכה במובייל */
-    transition: all 0.15s ease !important;
-  }
-  
-  /* אנימציה במובייל - לחיצה במקום hover */
-  .animated-text span:active {
-    color: #3b82f6 !important;
-    transform: scale(1.1) !important;
+    overflow: visible !important;
   }
 }
 
