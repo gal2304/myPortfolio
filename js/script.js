@@ -1,84 +1,76 @@
-/* קובץ JavaScript - פונקציונליות האתר */
+/* select elements from the page */
+const hamburger = document.querySelector(".hamburger");        
+const navMenu = document.querySelector(".nav-menu");          
 
-/* בחירת אלמנטים מהדף */
-const hamburger = document.querySelector(".hamburger");        /* כפתור המבורגר */
-const navMenu = document.querySelector(".nav-menu");          /* תפריט ניווט */
-
-/* הוספת מאזין לחיצה לכפתור המבורגר */
+/* add a listener to the hamburger button */
 hamburger.addEventListener("click", mobileMenu);
 
-/* פונקציה לפתיחה/סגירה של תפריט מובייל */
+/* function to open/close the mobile menu */
 function mobileMenu() {
-  hamburger.classList.toggle("active");    /* הוספה/הסרה של מחלקה פעילה */
-  navMenu.classList.toggle("active");      /* הצגה/הסתרה של התפריט */
+  hamburger.classList.toggle("active");    
+  navMenu.classList.toggle("active");     
 }
 
-/* בחירת כל קישורי הניווט */
+/* select all navbar links */
 const navLink = document.querySelectorAll(".nav-link");
 
-/* הוספת מאזין לכל קישור - סגירת תפריט בלחיצה */
+/* add a listener to all navbar links - close the mobile menu on click */
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
-/* פונקציה לסגירת תפריט מובייל */
+/* function to close the mobile menu */
 function closeMenu() {
-  hamburger.classList.remove("active");    /* הסרת מצב פעיל מהמבורגר */
-  navMenu.classList.remove("active");      /* הסתרת התפריט */
+  hamburger.classList.remove("active");    
+  navMenu.classList.remove("active");    
 }
 
-/* בחירת כפתור החלפת מצב כהה/בהיר */
+/* select the theme switch button */
 const toggleSwitch = document.querySelector(
   '.theme-switch input[type="checkbox"]'
 );
 
-/* פונקציה להחלפת מצב צבע */
+/* function to switch the theme */
 function switchTheme(e) {
   if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");    /* מצב כהה */
+    document.documentElement.setAttribute("data-theme", "dark");   
   } else {
-    document.documentElement.setAttribute("data-theme", "light");   /* מצב בהיר */
+    document.documentElement.setAttribute("data-theme", "light");  
   }
 }
 
-/* הוספת מאזין לשינוי מצב */
+/* add a listener to the theme switch button */
 toggleSwitch.addEventListener("change", switchTheme, false);
 
-/* שמירת העדפת צבע למבקרים חוזרים */
+/* save the theme preference for returning visitors */
 
-/* פונקציה משופרת להחלפת מצב עם שמירה */
+/* improved function to switch the theme with saving */
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark");    /* שמירה במחשב המקומי */
-  } else {
+    localStorage.setItem("theme", "dark");   
     document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light");   /* שמירה במחשב המקומי */
+    localStorage.setItem("theme", "light");  
   }
 }
 
-/* טעינת העדפת משתמש בעת פתיחת האתר */
 
-/* בדיקה אם יש העדפה שמורה */
+
+/* check if there is a saved theme */
 const currentTheme = localStorage.getItem("theme")
   ? localStorage.getItem("theme")
   : null;
 
-/* החלת ההעדפה השמורה */
+/* apply the saved theme */
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
 
-  /* סימון הכפתור אם המצב כהה */
+  
   if (currentTheme === "dark") {
     toggleSwitch.checked = true;
   }
 }
 
-/* הוספת השנה הנוכחית לתחתית האתר */
-
-/* בחירת אלמנט התאריך */
+/* add the current year to the footer */
+/* select the date element */
 let myDate = document.querySelector("#datee");
-
-/* קבלת השנה הנוכחית */
 const yes = new Date().getFullYear();
-
-/* הוספת השנה לדף */
 myDate.innerHTML = yes; 
