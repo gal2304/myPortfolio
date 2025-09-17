@@ -777,9 +777,10 @@ body {
   }
 }
 
+/* Mobile-specific fix for animated text */
 @media (max-width: 768px) {
   .animated-text {
-    font-size: 0.75em !important;
+    font-size: 1em !important;
     line-height: 1.5 !important;
     white-space: normal !important;
     word-break: keep-all !important;
@@ -792,6 +793,26 @@ body {
   .animated-text span {
     white-space: nowrap !important;
     display: inline-block !important;
+    /* הוספתי תמיכה במובייל */
+    transition: all 0.15s ease !important;
+  }
+  
+  /* אנימציה במובייל - לחיצה במקום hover */
+  .animated-text span:active {
+    color: #3b82f6 !important;
+    transform: scale(1.1) !important;
+  }
+}
+
+/* Mobile-specific fix for projects header */
+@media (max-width: 768px) {
+  .content-text h2 {
+    font-size: 1.8em !important;  /* הגדלתי את כותרת הפרויקטים */
+  }
+  
+  .content-text h2 i {
+    font-size: 0.9em !important;  /* הגדלתי את אייקון התיקייה */
+    margin-left: 8px !important;
   }
 }
 
