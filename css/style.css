@@ -789,12 +789,31 @@ body {
     max-width: none !important; /* שיניתי מ-100% ל-none */
     overflow-wrap: break-word !important;
     overflow: visible !important;
+    -webkit-text-size-adjust: 100% !important; /* הוספתי זה לאייפון */
+    text-size-adjust: 100% !important; /* הוספתי זה לאייפון */
   }
   
   .animated-text span {
     white-space: normal !important; /* שיניתי מ-nowrap ל-normal */
     display: inline-block !important;
     overflow: visible !important;
+    -webkit-text-size-adjust: 100% !important; /* הוספתי זה לאייפון */
+    text-size-adjust: 100% !important; /* הוספתי זה לאייפון */
+  }
+}
+
+/* Safari/iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .animated-text {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+  }
+  
+  .animated-text span {
+    -webkit-text-size-adjust: 100% !important;
+    text-size-adjust: 100% !important;
   }
 }
 
