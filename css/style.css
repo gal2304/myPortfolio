@@ -1,45 +1,37 @@
-/* Main CSS file - contains all basic website styling */
 
 /* Import Raleway font from Google Fonts */
 @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
 /* CSS variables definition - colors, sizes, etc. */
 :root {
-  /* Primary colors */
-  --primary-color: #ffcd42;      /* Primary yellow color */
-  --secondary-color: #ffd35c;    /* Secondary yellow color */
-  --bg-primary: #ffffff;         /* White background */
-  --text-color: #222222;         /* Dark text color */
-  --text-color-two: #ffffff;     /* White text color */
-  --bg-secondary: #000000;       /* Black background */
-  --card-background: #f4f4f4;   /* Card background */
-  --bg-secondary-two: #111111;   /* Secondary dark background */
 
-  /* Shadow for all elements */
+  --primary-color: #ffcd42;      
+  --secondary-color: #ffd35c;    
+  --bg-primary: #ffffff;         
+  --text-color: #222222;         
+  --text-color-two: #ffffff;    
+  --bg-secondary: #000000;       
+  --card-background: #f4f4f4;  
+  --bg-secondary-two: #111111;   
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-
-  /* Font weights */
-  --weight-small: 400;           /* Light weight */
-  --weight-semibold: 600;        /* Medium weight */
-  --weight-bold: 800;            /* Bold weight */
-
-  /* Max widths */
-  --width-small: 600px;          /* Small width */
-  --width-medium: 1100px;        /* Medium width */
-  --width-large: 1300px;         /* Large width */
+  --weight-small: 400;           
+  --weight-semibold: 600;        
+  --weight-bold: 800;            
+  --width-small: 600px;         
+  --width-medium: 1100px;        
+  --width-large: 1300px;         
 }
 
-/* Dark mode settings */
 [data-theme="dark"] {
-  --primary-color: #ffcd42;      /* Yellow color remains */
-  --secondary-color: #ffd35c;    /* Secondary yellow remains */
-  --bg-primary: #000000;         /* Black background */
-  --text-color: #ffffff;         /* White text */
-  --text-color-two: #222222;     /* Dark text */
-  --bg-secondary: #ffffff;       /* White background */
-  --card-background: #111111;    /* Dark card background */
-  --bg-secondary-two: #f4f4f4;  /* Light secondary background */
-  --shadow: 0 2px 10px rgba(95, 95, 95, 0.2); /* Softer shadow */
+  --primary-color: #ffcd42;      
+  --secondary-color: #ffd35c;    
+  --bg-primary: #000000;         
+  --text-color: #ffffff;         
+  --text-color-two: #222222;     
+  --bg-secondary: #ffffff;       
+  --card-background: #111111;   
+  --bg-secondary-two: #f4f4f4;  
+  --shadow: 0 2px 10px rgba(95, 95, 95, 0.2); 
 }
 
 /* Basic HTML settings */
@@ -71,26 +63,25 @@ body {
   background: var(--bg-primary);
   color: var(--text-color);
   font-family: "Raleway", sans-serif;
-  line-height: 1.5;              /* Line spacing */
+  line-height: 1.5;             
 }
 
 /* Navigation menu styling */
 .navbar {
-  position: fixed;               /* Fixed menu at top */
+  position: fixed;              
   top: 0;
   left: 0;
   right: 0;
-  z-index: 20;                   /* High layer */
+  z-index: 20;                   
   background: var(--bg-primary);
 }
 
-/* Menu container */
 .navbar .container {
-  display: flex;                 /* Horizontal layout */
-  align-items: center;           /* Vertical center alignment */
-  justify-content: space-between; /* Horizontal distribution */
+  display: flex;                
+  align-items: center;           
+  justify-content: space-between; 
   z-index: 20;
-  height: 80px;                  /* Menu height */
+  height: 80px;                  
   width: 100%;
 }
 
@@ -101,117 +92,105 @@ body {
   background: var(--bg-primary);
 }
 
-/* עיצוב קישורי ניווט */
 .navbar .nav-link {
-  margin: 0 1rem;                /* רווחים בין קישורים */
-  font-size: 0.8rem;             /* גודל פונט קטן */
+  margin: 0 1rem;                
+  font-size: 0.8rem;             
   font-weight: var(--weight-semibold);
 }
 
-/* עיצוב לוגו */
 .navbar #logo img {
   display: block;
-  width: 50px;                   /* רוחב לוגו */
-  border-radius: 50%;             /* עיגול מלא */
-  border: 2px solid #3b82f6;     /* מסגרת כחולה */
-  padding: 2px;                   /* רווח פנימי */
-  transition: all 0.15s ease;      /* אנימציה */
+  width: 50px;                   
+  border-radius: 50%;             
+  border: 2px solid #3b82f6;     
+  padding: 2px;                  
+  transition: all 0.15s ease;      
 }
 
-/* אפקט hover ללוגו */
 .navbar #logo img:hover {
-  transform: scale(1.1);          /* הגדלה קלה */
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); /* צל כחול */
+  transform: scale(1.1);          
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3); 
 }
 
-/* עיצוב כפתורים בתפריט */
 .navbar .btn {
   margin-right: 1.5rem;
 }
 
-/* עיצוב חץ בכפתורים */
 .fas.fa-arrow-right {
   margin-left: 0.5rem;
   font-size: 0.9rem;
 }
 
-/* עיצוב כפתור המבורגר למובייל */
 .hamburger {
   margin-bottom: 0.1rem;
-  display: none;                 /* מוסתר בדסקטופ */
+  display: none;               
 }
 
 /* פסי המבורגר */
 .bar {
   display: block;
-  width: 23px;                   /* רוחב פס */
-  height: 3px;                   /* גובה פס */
-  margin: 4px auto;              /* רווח בין פסים */
-  transition: all 0.3s ease-in-out; /* אנימציה */
-  border-radius: 30px;           /* פינות מעוגלות */
+  width: 23px;                   
+  height: 3px;                 
+  margin: 4px auto;              
+  transition: all 0.3s ease-in-out; 
+  border-radius: 30px;           
   background-color: var(--bg-secondary);
 }
 
 /* עיצוב אזור הכותרת הראשי */
 #hero {
   display: flex;
-  flex-direction: column;        /* סידור אנכי */
+  flex-direction: column;        
   height: 100%;
 }
 
-/* עיצוב תמונת פרופיל */
 .profile-image {
-  width: 150px;                  /* רוחב תמונה */
-  height: 150px;                 /* גובה תמונה - חיוני לobject-fit */
-  border-radius: 50%;            /* תמונה עגולה */
-  animation: bounce 1s infinite alternate; /* אנימציה קופצת */
-  display: block;                /* הופך את התמונה לבלוק */
-  margin: 0 auto;                /* מרכז את התמונה אופקית */
-  object-fit: cover;             /* מכסה את כל העיגול */
-  object-position: center;       /* מרכז את התמונה בתוך העיגול */
+  width: 150px;                  
+  height: 150px;                
+  border-radius: 50%;           
+  animation: bounce 1s infinite alternate; 
+  display: block;                
+  margin: 0 auto;               
+  object-fit: cover;             
+  object-position: center;     
 }
 
 /* הגדרת אנימציה קופצת */
 @keyframes bounce {
   from {
-    transform: translateY(0px);   /* מיקום התחלתי */
+    transform: translateY(0px);   
   }
 
   to {
-    transform: translateY(-10px); /* מיקום סופי - למעלה */
+    transform: translateY(-10px); 
   }
 }
 
-/* קו מפריד בין אזורים */
 .division {
   width: 100%;
-  height: 2px;                   /* עובי קו */
+  height: 2px;                  
   background-color: var(--card-background);
-  margin: 5.5rem 0;              /* רווחים מעל ומתחת */
+  margin: 5.5rem 0;             
 }
 
-/* עיצוב אזור הפרויקטים */
 #projects {
   display: flex;
-  flex-direction: column;        /* סידור אנכי */
-  margin: 2rem auto 5rem;        /* רווחים חיצוניים */
+  flex-direction: column;        
+  margin: 2rem auto 5rem;        
 }
 
-/* עיצוב כפתור "ראה עוד" */
 #projects .btn {
-  align-self: center;            /* יישור למרכז */
+  align-self: center;           
   margin: 2rem 0;
 }
 
-/* רשת הפרויקטים */
 .project {
-  display: grid;                 /* סידור רשת */
-  grid-template-columns: repeat(3, 1fr); /* 3 עמודות שוות */
-  grid-auto-rows: minmax(250px, auto); /* גובה מינימלי */
-  grid-gap: 0.9rem;             /* רווח בין כרטיסים */
+  display: grid;               
+  grid-template-columns: repeat(3, 1fr); 
+  grid-auto-rows: minmax(250px, auto); 
+  grid-gap: 0.9rem;             
 }
 
-/* עיצוב טקסט בתיאור פרויקט */
 .card .project-bio p {
   font-size: 0.83rem;
 }
@@ -220,43 +199,38 @@ body {
   font-size: 0.9rem;
 }
 
-/* מידע על הפרויקט */
 .project-info {
   display: flex;
-  justify-content: space-between; /* פיזור אופקי */
-  opacity: 0;                    /* מוסתר בהתחלה */
+  justify-content: space-between; 
+  opacity: 0;                    
   position: relative;
-  transition: 0.5s ease-in-out;  /* אנימציה */
+  transition: 0.5s ease-in-out;  
 }
 
-/* תיאור הפרויקט */
 .project-bio {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;     /* יישור לתחתית */
+  justify-content: flex-end;     
   position: relative;
-  top: 160px;                    /* מיקום מתחת */
-  left: 10px;                    /* רווח משמאל */
+  top: 160px;                 
+  left: 10px;                    
 }
 
-/* Footer styling */
 #footer {
-  background: var(--bg-primary); /* Dynamic background based on theme */
+  background: var(--bg-primary); 
 }
 
-/* Footer container */
 #footer .container {
   display: flex;
-  flex-direction: column;        /* Vertical layout */
-  align-items: center;           /* Center alignment */
+  flex-direction: column;        
+  align-items: center;          
   justify-content: center;
-  color: var(--text-color);      /* Dynamic text color */
-  min-height: 200px;             /* Min height */
+  color: var(--text-color);     
+  min-height: 200px;             
   text-align: center;
   padding: 3rem 0;
 }
 
-/* Footer header */
 #footer h3 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -267,14 +241,12 @@ body {
   color: #3b82f6;
 }
 
-/* Footer description */
 #footer p {
   font-size: 1rem;
   margin-bottom: 2rem;
   opacity: 0.8;
 }
 
-/* Contact details */
 .contact-details {
   display: flex;
   flex-direction: row;
@@ -285,7 +257,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* Social media icons in contact details */
 .contact-details .contact-item:last-child {
   display: flex;
   gap: 1rem;
@@ -295,10 +266,9 @@ body {
   width: 18px;
   height: 18px;
   transition: filter 0.3s;
-  filter: brightness(0) invert(0); /* Default black */
-}
+  filter: brightness(0) invert(0); 
 
-/* Dark mode - white icons */
+
 [data-theme="dark"] .contact-details .contact-item:last-child img {
   filter: brightness(0) invert(1);
 }
@@ -326,31 +296,31 @@ body {
   color: #3b82f6;
 }
 
-/* Footer links styling */
+
 #footer a {
   font-size: 0.8rem;
   color: var(--text-color);
 }
 
-/* Hover effect for links */
+
 #footer a:hover {
-  opacity: 0.6;                  /* Transparency */
+  opacity: 0.6;                 
 }
 
-/* Social media area */
+
 #footer .social {
   margin: 0.3rem 0;
 }
 
-/* Social media icons */
+
 #footer .social img {
   width: 12px;
   height: 12px;
   transition: filter 0.3s;
-  filter: brightness(0) invert(0); /* Default black */
+  filter: brightness(0) invert(0); 
 }
 
-/* Dark mode - white icons */
+
 [data-theme="dark"] #footer .social img {
   filter: brightness(0) invert(1);
 }
@@ -359,49 +329,40 @@ body {
   filter: brightness(0.7) invert(0) sepia(1) hue-rotate(180deg) saturate(5);
 }
 
-
-
-/* Spacing between icons */
 #footer .social a {
   margin: 0 0.5rem;
 }
 
-/* Footer text styling */
 #footer p {
   font-size: 0.8rem;
 }
 
-/* עיצוב רספונסיבי - מסכים בינוניים */
 @media (max-width: 1000px) {
   .project {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 עמודות במקום 3 */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
-/* עיצוב רספונסיבי - מסכים קטנים */
 @media (max-width: 768px) {
 }
 
-/* עיצוב רספונסיבי - מובייל */
 @media (max-width: 670px) {
-  /* תפריט ניווט במובייל */
+  /* mobile navbar   */
   .navbar .nav-menu {
-    position: fixed;              /* תפריט קבוע */
-    right: -100vw;               /* מחוץ למסך */
-    top: 4.5rem;                 /* מתחת לתפריט */
-    flex-direction: column;       /* סידור אנכי */
-    width: calc(80% - 10px);     /* רוחב 80% */
-    transition: 0.3s;            /* אנימציה */
+    position: fixed;              
+    right: -100vw;               
+    top: 4.5rem;                 
+    flex-direction: column;       
+    width: calc(80% - 10px);     
+    transition: 0.3s;            
     box-shadow: var(--shadow);
     padding: 2rem;
     border-radius: 5px;
-    align-items: flex-start;     /* יישור שמאלה */
+    align-items: flex-start;     
   }
 
-  /* עיצוב כפתורים במובייל */
-  /* Make RESUME button look like regular text link in mobile */
-  /* Make RESUME exactly like CONTACT and PROJECTS in mobile */
+  /*   Mobile buttons design */
   /* Hide any arrow icons in mobile for RESUME */
   .nav-menu .btn i {
     display: none !important;
@@ -436,7 +397,7 @@ body {
   .nav-menu .btn::before {
     display: none !important;
   }
-  /* Ensure RESUME aligns exactly like other nav links in mobile */
+  
   .nav-menu .btn {
     text-align: left !important;
     justify-content: flex-start !important;
@@ -471,27 +432,20 @@ body {
     margin-top: 1rem;
   }
 
-  /* תפריט פעיל */
   .nav-menu.active {
-    right: 20px;                 /* מופיע מימין */
+    right: 20px;                
   }
 
-  /* עיצוב קישורים במובייל */
   .nav-menu .nav-link {
     font-size: 0.9rem;
     margin: 0 0.2rem;
   }
 
-  /* עיצוב רשימות במובייל */
   .nav-menu li {
     margin-bottom: 0.5rem;
     width: 100%;
   }
 
-  /* עיצוב כפתורים במובייל */
-  /* Make RESUME button look like regular text link in mobile */
-  /* Make RESUME exactly like CONTACT and PROJECTS in mobile */
-  /* Hide any arrow icons in mobile for RESUME */
   .nav-menu .btn i {
     display: none !important;
   }
@@ -525,7 +479,7 @@ body {
   .nav-menu .btn::before {
     display: none !important;
   }
-  /* Ensure RESUME aligns exactly like other nav links in mobile */
+
   .nav-menu .btn {
     text-align: left !important;
     justify-content: flex-start !important;
@@ -561,48 +515,45 @@ body {
     margin-top: 0.5rem;
   }
 
-  /* הצגת כפתור המבורגר */
   .hamburger {
     display: block;
     cursor: pointer;
     padding: 0.2rem 0.4rem;
   }
 
-  /* עיצוב המבורגר פעיל */
+  
   .hamburger.active {
     border: 1px dotted gray;
   }
 
-  /* הסתרת פס אמצעי */
+
   .hamburger.active .bar:nth-child(2) {
     opacity: 0;
   }
 
-  /* סיבוב פס עליון */
+
   .hamburger.active .bar:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
   }
 
-  /* סיבוב פס תחתון */
+
   .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
 
-/* עיצוב רספונסיבי - מסכים קטנים מאוד */
+
 @media (max-width: 600px) {
   .project {
     display: grid;
-    grid-template-columns: 1fr;  /* עמודה אחת */
+    grid-template-columns: 1fr;  
   }
 
-  /* עיצוב כפתורים במובייל קטן */
   .header-container .btn {
     border-radius: 5px;
     width: 80%;
   }
 
-  /* Footer - colors and centering */
 #footer, #footer .container, #footer h3, #footer p, #footer a, #footer .contact-item, #footer .contact-item a, #footer .contact-item i, #footer .social, #footer .social a {
   color: var(--text-color) !important;
   text-align: center !important;
@@ -627,8 +578,6 @@ body {
     margin-bottom: 1.5rem;
   }
 
-
-
   #footer p {
     margin-bottom: 0.5rem;
   }
@@ -640,7 +589,7 @@ body {
     }
   }
 } 
-/* Animated text hover effect */
+
 .animated-text {
   display: inline-block;
 }
@@ -657,8 +606,6 @@ body {
   transition: all 0.15s ease;
 }
 
-
-/* Navigation link hover animation */
 .nav-link {
   position: relative;
   transition: color 0.15s ease;
@@ -683,8 +630,6 @@ body {
   width: 100%;
 }
 
-
-/* Navigation link hover animation */
 .nav-link {
   position: relative;
   transition: color 0.15s ease;
@@ -709,7 +654,6 @@ body {
   width: 100%;
 }
 
-/* Resume button modern Instagram-style animation */
 .navbar .btn {
   position: relative;
   overflow: hidden;
@@ -790,17 +734,14 @@ body {
   }
 }
 
-/* Fix navigation hover text color for light mode */
 .nav-link:hover {
   color: #000000 !important;
 }
 
-/* Dark mode navigation hover */
 [data-theme="dark"] .nav-link:hover {
   color: #ffffff !important;
 }
 
-/* Resume button styling for desktop only */
 @media (min-width: 769px) {
   .nav-link[href*="docs.google.com"] {
     background: linear-gradient(135deg, #3C64DC 0%, #5078F0 100%);
@@ -830,14 +771,12 @@ body {
     color: white !important;
   }
 
-  /* Remove any pseudo-elements that might create underlines */
   .nav-link[href*="docs.google.com"]::after,
   .nav-link[href*="docs.google.com"]::before {
     display: none !important;
   }
 }
 
-/* Mobile-specific fix for animated text */
 @media (max-width: 768px) {
   .animated-text {
     font-size: 0.75em !important;
@@ -850,14 +789,12 @@ body {
     overflow-wrap: break-word !important;
   }
   
-  /* Force each span to not break */
   .animated-text span {
     white-space: nowrap !important;
     display: inline-block !important;
   }
 }
 
-/* Resume button styling for mobile - return to normal */
 @media (max-width: 768px) {
   .nav-link[href*="docs.google.com"] {
     background: none !important;
@@ -887,7 +824,6 @@ body {
     color: #3b82f6 !important;
   }
 
-  /* Remove any pseudo-elements that might create underlines */
   .nav-link[href*="docs.google.com"]::after,
   .nav-link[href*="docs.google.com"]::before {
     display: none !important;
